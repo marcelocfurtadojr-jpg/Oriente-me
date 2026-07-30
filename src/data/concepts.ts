@@ -1,0 +1,228 @@
+import type { Concept } from '../types'
+
+export const ROOT_ID = 'analise-comportamento'
+
+/**
+ * Árvore de conhecimento curada manualmente (Análise do Comportamento → Psicologia da Saúde).
+ * `anchors` são fatos verificados que ancoram a geração da IA (anti-alucinação).
+ */
+export const CONCEPTS: Concept[] = [
+  {
+    id: 'analise-comportamento',
+    title: 'Análise do Comportamento',
+    short: 'Ciência do comportamento como objeto próprio, explicado pela relação do organismo com o ambiente.',
+    area: 'Análise do Comportamento',
+    prereqs: [],
+    articleIds: ['skinner1953'],
+    anchors: [
+      'Tem três ramos: behaviorismo radical (filosofia), análise experimental do comportamento (pesquisa básica) e análise do comportamento aplicada (ABA).',
+      'B. F. Skinner é o principal fundador; a unidade de análise é a relação funcional entre comportamento e ambiente, não estruturas internas.',
+    ],
+    tags: ['fundamento'],
+  },
+  {
+    id: 'behaviorismo-radical',
+    title: 'Behaviorismo Radical',
+    short: 'A filosofia da Análise do Comportamento: inclui eventos privados como comportamento, sem dualismo mente-corpo.',
+    area: 'Análise do Comportamento',
+    prereqs: ['analise-comportamento'],
+    articleIds: [],
+    anchors: [
+      'Proposto por Skinner; distingue-se do behaviorismo metodológico de Watson por NÃO negar eventos privados (pensar, sentir) — trata-os como comportamento a ser explicado.',
+      'Rejeita explicações mentalistas e causas internas autônomas; adota o selecionismo como modelo causal.',
+    ],
+    tags: ['filosofia'],
+  },
+  {
+    id: 'selecao-consequencias',
+    title: 'Seleção pelas Consequências',
+    short: 'O comportamento é selecionado por suas consequências, em três níveis: filogenético, ontogenético e cultural.',
+    area: 'Análise do Comportamento',
+    prereqs: ['behaviorismo-radical'],
+    articleIds: ['skinner1981'],
+    anchors: [
+      'Formalizada por Skinner (1981), "Selection by consequences" (Science).',
+      'Três níveis: seleção natural (filogenia), condicionamento operante (ontogenia) e evolução das práticas culturais.',
+      'É um modelo causal selecionista, análogo (não idêntico) à seleção natural darwiniana.',
+    ],
+  },
+  {
+    id: 'contingencias',
+    title: 'Contingências (tríplice contingência)',
+    short: 'Relações de dependência entre antecedente, comportamento e consequência.',
+    area: 'Análise do Comportamento',
+    prereqs: ['selecao-consequencias'],
+    articleIds: [],
+    anchors: [
+      'A tríplice contingência: Antecedente (estímulo discriminativo) → Resposta (comportamento) → Consequência.',
+      'Contingência descreve a relação de dependência (probabilística) entre esses termos, não mera contiguidade temporal.',
+    ],
+  },
+  {
+    id: 'reforcamento',
+    title: 'Reforçamento',
+    short: 'Processo em que consequências aumentam a probabilidade futura de um comportamento.',
+    area: 'Análise do Comportamento',
+    prereqs: ['contingencias'],
+    articleIds: ['skinner1953'],
+    anchors: [
+      'Reforçamento positivo: apresentar um estímulo aumenta a resposta. Negativo: remover/adiar um estímulo aumenta a resposta.',
+      'Definido pela FUNÇÃO (efeito sobre a probabilidade), não pela topografia nem por suposta "recompensa".',
+      'Esquemas de reforçamento (razão/intervalo, fixo/variável) controlam padrões de resposta.',
+    ],
+  },
+  {
+    id: 'punicao',
+    title: 'Punição',
+    short: 'Processo em que consequências reduzem a probabilidade futura de um comportamento.',
+    area: 'Análise do Comportamento',
+    prereqs: ['contingencias'],
+    articleIds: ['skinner1953'],
+    anchors: [
+      'Punição positiva: apresentar um estímulo reduz a resposta. Negativa: remover um estímulo reduz a resposta.',
+      'Efeitos colaterais (respostas emocionais, fuga/esquiva, contracontrole) tornam-na menos recomendada que o reforçamento diferencial.',
+    ],
+  },
+  {
+    id: 'extincao',
+    title: 'Extinção',
+    short: 'Queda na frequência do comportamento quando o reforço que o mantinha deixa de ocorrer.',
+    area: 'Análise do Comportamento',
+    prereqs: ['reforcamento'],
+    articleIds: [],
+    anchors: [
+      'Fenômenos associados: pico de extinção (burst), aumento temporário da variabilidade e da resposta emocional, e recuperação espontânea.',
+      'Não é o mesmo que esquecimento nem que punição: é a suspensão da contingência de reforço.',
+    ],
+  },
+  {
+    id: 'controle-estimulos',
+    title: 'Controle de Estímulos',
+    short: 'Como estímulos antecedentes passam a sinalizar disponibilidade de reforço e a evocar respostas.',
+    area: 'Análise do Comportamento',
+    prereqs: ['reforcamento'],
+    articleIds: ['michael1982', 'skinner1953'],
+    anchors: [
+      'Estímulo discriminativo (S^D) sinaliza que a resposta será reforçada; S-delta sinaliza que não será.',
+      'Michael (1982) distingue a função discriminativa (disponibilidade) da função motivacional (valor) do estímulo.',
+      'Envolve discriminação e generalização de estímulos.',
+    ],
+  },
+  {
+    id: 'operacoes-motivadoras',
+    title: 'Operações Motivadoras (EO e AO)',
+    short: 'Eventos que alteram o valor de um reforçador e a evocação do comportamento relacionado.',
+    area: 'Análise do Comportamento',
+    prereqs: ['controle-estimulos', 'reforcamento'],
+    articleIds: ['michael1982', 'michael1993', 'laraway2003'],
+    anchors: [
+      'Dois efeitos: value-altering (altera o valor reforçador/punidor) e behavior-altering (evoca ou abole a resposta).',
+      'Michael (1982, 1993) introduz as operações estabelecedoras; Laraway et al. (2003) consolidam o termo operações motivadoras, com subtipos estabelecedora (EO) e abolidora (AO).',
+      'Diferem do estímulo discriminativo: a OM altera o VALOR do reforço; o S^D sinaliza a DISPONIBILIDADE do reforço.',
+    ],
+  },
+  {
+    id: 'lei-igualacao',
+    title: 'Lei da Igualação',
+    short: 'A distribuição relativa de respostas iguala a distribuição relativa de reforços em escolhas concorrentes.',
+    area: 'Análise do Comportamento',
+    prereqs: ['reforcamento', 'contingencias'],
+    articleIds: ['herrnstein1961', 'herrnstein1970', 'baum1974'],
+    anchors: [
+      'Herrnstein (1961) formula a igualação a partir de esquemas concorrentes; Herrnstein (1970) generaliza na "lei do efeito".',
+      'Baum (1974) propõe a lei da igualação generalizada, com parâmetros de sensibilidade e viés; undermatching (sub-igualação) é o desvio mais comum.',
+    ],
+  },
+  {
+    id: 'alocacao-comportamento',
+    title: 'Alocação do Comportamento',
+    short: 'Como o organismo distribui comportamento entre alternativas ao longo do tempo.',
+    area: 'Análise do Comportamento',
+    prereqs: ['lei-igualacao'],
+    articleIds: ['herrnstein1970', 'baum1974', 'rachlingreen1972'],
+    anchors: [
+      'Deriva da igualação: a escolha é a alocação relativa de tempo/respostas entre fontes de reforço.',
+      'Rachlin & Green (1972) ligam alocação e escolha ao autocontrole (compromisso e reforço atrasado).',
+    ],
+  },
+  {
+    id: 'economia-comportamental',
+    title: 'Economia Comportamental',
+    short: 'Aplica conceitos de demanda e elasticidade ao comportamento; base para autocontrole e saúde.',
+    area: 'Análise do Comportamento',
+    prereqs: ['alocacao-comportamento', 'operacoes-motivadoras'],
+    articleIds: ['hursh1980', 'hurshsilberberg2008', 'rachlingreen1972'],
+    anchors: [
+      'Hursh (1980) importa demanda e elasticidade para a AC; Hursh & Silberberg (2008) propõem o modelo exponencial de demanda e o "valor essencial".',
+      'Conceitos-chave: elasticidade da demanda, ponto de quebra (breakpoint), bens substitutos/complementares, desconto do atraso (delay discounting).',
+      'Aplicações em saúde: adesão, uso de substâncias, escolhas de risco e manejo de doenças crônicas.',
+    ],
+  },
+  {
+    id: 'psicologia-saude',
+    title: 'Psicologia da Saúde',
+    short: 'Aplicação de princípios comportamentais à saúde: adesão, prevenção e manejo de doenças.',
+    area: 'Psicologia da Saúde',
+    prereqs: ['reforcamento', 'controle-estimulos'],
+    articleIds: [],
+    anchors: [
+      'Campo interdisciplinar; na abordagem analítico-comportamental, comportamentos de saúde e doença são analisados por suas contingências.',
+      'Adota o modelo biopsicossocial; temas centrais: adesão ao tratamento, comportamento de risco, autocuidado e enfrentamento.',
+    ],
+    tags: ['saude'],
+  },
+  {
+    id: 'doencas-cronicas',
+    title: 'Doenças Crônicas',
+    short: 'Condições de longo curso (ex.: Hipertensão Arterial Pulmonar) que exigem manejo comportamental contínuo.',
+    area: 'Psicologia da Saúde',
+    prereqs: ['psicologia-saude'],
+    articleIds: [],
+    anchors: [
+      'Exigem adesão prolongada, automonitoramento e mudança de estilo de vida — alvos típicos de análise de contingências e economia comportamental.',
+      'A Hipertensão Arterial Pulmonar (HAP) é uma doença crônica grave, com forte impacto funcional e sobre a qualidade de vida.',
+    ],
+    tags: ['saude'],
+  },
+  {
+    id: 'qualidade-vida',
+    title: 'Qualidade de Vida',
+    short: 'Avaliação multidimensional do impacto da condição e do tratamento na vida do paciente.',
+    area: 'Psicologia da Saúde',
+    prereqs: ['psicologia-saude', 'doencas-cronicas'],
+    articleIds: [],
+    anchors: [
+      'Construto multidimensional (físico, psicológico, social, ambiental).',
+      'A OMS/WHOQOL define qualidade de vida como a percepção do indivíduo sobre sua posição na vida, no contexto de sua cultura e valores.',
+      'Distinguir qualidade de vida geral da qualidade de vida relacionada à saúde (HRQoL) e instrumentos genéricos de específicos por doença.',
+    ],
+    tags: ['saude'],
+  },
+  {
+    id: 'psicometria',
+    title: 'Psicometria',
+    short: 'Teoria e métodos para medir construtos psicológicos com validade e confiabilidade.',
+    area: 'Metodologia e Psicometria',
+    prereqs: ['qualidade-vida'],
+    articleIds: [],
+    anchors: [
+      'Duas grandes abordagens: Teoria Clássica dos Testes (TCT) e Teoria de Resposta ao Item (TRI).',
+      'Evidências de validade (conteúdo, estrutura interna, relação com outras variáveis) e confiabilidade (consistência interna, estabilidade).',
+      'Análise fatorial exploratória e confirmatória são ferramentas centrais para a estrutura interna.',
+    ],
+    tags: ['metodo'],
+  },
+  {
+    id: 'desenvolvimento-instrumentos',
+    title: 'Desenvolvimento de Instrumentos',
+    short: 'Construir e validar instrumentos (ex.: escalas de qualidade de vida) com evidência psicométrica.',
+    area: 'Metodologia e Psicometria',
+    prereqs: ['psicometria', 'qualidade-vida'],
+    articleIds: [],
+    anchors: [
+      'Etapas típicas: definição do construto, geração de itens, validade de conteúdo por juízes, estudo piloto, análise de itens, validação estrutural e de confiabilidade, e (quando aplicável) adaptação transcultural.',
+      'Padrões de referência na área incluem o COSMIN para propriedades de medida de instrumentos de saúde.',
+    ],
+    tags: ['metodo'],
+  },
+]
