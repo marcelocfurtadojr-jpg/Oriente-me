@@ -37,6 +37,9 @@ export interface ConceptProgress {
   seenAt?: string
   updatedAt: string
   notes?: string
+  /** melhor nota do quiz (0..1) e conclusão da fase. */
+  quizBest?: number
+  lessonDone?: boolean
 }
 
 export interface Profile {

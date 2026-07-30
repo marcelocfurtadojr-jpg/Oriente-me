@@ -18,11 +18,27 @@ export interface ChatLog {
   updatedAt: string
 }
 
+export interface GameState {
+  id: 'me'
+  xp: number
+  streakDays: number
+  /** YYYY-MM-DD do último dia de estudo (para a ofensiva). */
+  lastStudyDate: string
+}
+
+export interface Note {
+  conceptId: string
+  text: string
+  updatedAt: string
+}
+
 export class TutorDB extends Dexie {
   profile!: Table<Profile, string>
   progress!: Table<ConceptProgress, string>
   content!: Table<ContentCache, string>
   chats!: Table<ChatLog, number>
+  game!: Table<GameState, string>
+  notes!: Table<Note, string>
 
   constructor() {
     super('tutor-db')
@@ -31,6 +47,10 @@ export class TutorDB extends Dexie {
       progress: 'conceptId, mastery, dueTs',
       content: 'key, conceptId, block',
       chats: '++id, mode, ref',
+    })
+    this.version(2).stores({
+      game: 'id',
+      notes: 'conceptId',
     })
   }
 }

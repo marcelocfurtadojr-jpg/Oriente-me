@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import { BookOpen, GitBranch, RefreshCw, GraduationCap, Gavel, FileText, Settings, Home } from 'lucide-react'
+import { BookOpen, Library, RefreshCw, GraduationCap, Gavel, FileText, Settings, Map } from 'lucide-react'
 import { useApp } from '../store/appStore'
 
 const NAV = [
-  { to: '/', label: 'Início', icon: Home, end: true },
-  { to: '/arvore', label: 'Árvore', icon: GitBranch },
+  { to: '/', label: 'Trilha', icon: Map, end: true },
+  { to: '/biblioteca', label: 'Biblioteca', icon: Library },
   { to: '/revisao', label: 'Revisão', icon: RefreshCw },
   { to: '/orientador', label: 'Orientador', icon: GraduationCap },
   { to: '/banca', label: 'Banca', icon: Gavel },

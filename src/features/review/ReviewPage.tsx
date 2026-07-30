@@ -1,29 +1,26 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { Eye } from 'lucide-react'
-import { cacheGet, getDue, upsertProgress } from '../../lib/db/repo'
+import { getDue, upsertProgress } from '../../lib/db/repo'
 import { getConcept } from '../../lib/knowledge/graph'
+import { getLesson } from '../../content/lessons'
 import { schedule, masteryFromCard, newCard, type RecallRating } from '../../lib/srs/scheduler'
-import { useApp } from '../../store/appStore'
 import { Card, Button, Pill } from '../../components/ui'
 import { Markdown } from '../../components/Markdown'
 
 export function ReviewPage() {
-  const model = useApp((s) => s.model)
+  const nav = useNavigate()
   const due = useLiveQuery(() => getDue(Date.now()), [], undefined)
   const [revealed, setRevealed] = useState(false)
-  const [hint, setHint] = useState<string | null>(null)
 
   if (due === undefined) return <p className="text-muted">Carregando…</p>
   const queue = due.filter((d) => d.srs)
-
   if (queue.length === 0)
     return (
       <Card>
         <p className="text-sm">
-          Nenhuma revisão pendente agora. Os conceitos retornam automaticamente conforme o esquecimento
-          previsto. 🎉
+          Nenhuma revisão pendente agora. Os conceitos voltam automaticamente conforme o esquecimento previsto. 🎉
         </p>
       </Card>
     )
@@ -31,12 +28,7 @@ export function ReviewPage() {
   const item = queue[0]
   const concept = getConcept(item.conceptId)
   if (!concept) return null
-
-  async function reveal() {
-    const c = await cacheGet(`${item.conceptId}:intuitivo:${model}`)
-    setHint(c?.content ?? '(sem material gerado ainda — abra o conceito para estudar)')
-    setRevealed(true)
-  }
+  const lesson = getLesson(item.conceptId)
 
   async function rate(r: RecallRating) {
     const card = item.srs ?? newCard()
@@ -49,7 +41,6 @@ export function ReviewPage() {
       updatedAt: new Date().toISOString(),
     })
     setRevealed(false)
-    setHint(null)
   }
 
   return (
@@ -65,32 +56,26 @@ export function ReviewPage() {
         </div>
         <p className="text-sm">Tente recordar: o que é, de onde vem e para que serve. Depois confira.</p>
         {!revealed ? (
-          <Button variant="soft" onClick={reveal}>
+          <Button variant="soft" onClick={() => setRevealed(true)}>
             <Eye className="h-4 w-4" /> Mostrar resumo
           </Button>
         ) : (
           <div className="rounded-lg border border-border bg-surface-2 p-3">
-            {hint ? <Markdown>{hint}</Markdown> : null}
+            <Markdown>{lesson?.intuicao ?? concept.short}</Markdown>
           </div>
         )}
         <div>
           <p className="mb-2 text-sm text-muted">Como foi sua recordação?</p>
           <div className="flex flex-wrap gap-2">
-            <Button variant="soft" onClick={() => rate('again')}>
-              Esqueci
-            </Button>
-            <Button variant="soft" onClick={() => rate('hard')}>
-              Difícil
-            </Button>
-            <Button variant="soft" onClick={() => rate('good')}>
-              Bem
-            </Button>
+            <Button variant="soft" onClick={() => rate('again')}>Esqueci</Button>
+            <Button variant="soft" onClick={() => rate('hard')}>Difícil</Button>
+            <Button variant="soft" onClick={() => rate('good')}>Bem</Button>
             <Button onClick={() => rate('easy')}>Fácil</Button>
           </div>
         </div>
-        <Link to={`/conceito/${concept.id}`} className="text-sm text-accent">
-          Abrir conceito completo →
-        </Link>
+        <button onClick={() => nav(`/licao/${concept.id}`)} className="self-start text-sm text-accent">
+          Abrir a fase completa →
+        </button>
       </Card>
     </div>
   )
