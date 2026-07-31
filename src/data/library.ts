@@ -277,4 +277,81 @@ export const LIBRARY: Article[] = [
     whyFoundational: 'Consolidação empírica e teórica da lei da igualação.',
     relatedConceptIds: ['lei-igualacao', 'alocacao-comportamento'],
   },
+  {
+    id: 'matarazzo1980',
+    authors: 'Matarazzo, J. D.',
+    year: 1980,
+    title: 'Behavioral health and behavioral medicine: frontiers for a new health psychology',
+    venue: 'American Psychologist, 35(9), 807–817',
+    keyIdea:
+      'Define e delimita os campos de "saúde comportamental" e "medicina comportamental", firmando a Psicologia da Saúde.',
+    whyFoundational: 'Marco institucional da Psicologia da Saúde como campo.',
+    relatedConceptIds: ['psicologia-saude'],
+  },
+  {
+    id: 'who2003',
+    authors: 'World Health Organization (WHO)',
+    year: 2003,
+    title: 'Adherence to long-term therapies: evidence for action',
+    venue: 'Geneva: World Health Organization',
+    keyIdea:
+      'Relatório de referência sobre adesão a terapias de longo prazo; estima adesão média de ~50% em doenças crônicas e propõe determinantes multidimensionais.',
+    whyFoundational: 'Consolidou a adesão como prioridade de saúde pública.',
+    relatedConceptIds: ['doencas-cronicas'],
+  },
+  {
+    id: 'sprangers1999',
+    authors: 'Sprangers, M. A. G., & Schwartz, C. E.',
+    year: 1999,
+    title: 'Integrating response shift into health-related quality of life research: a theoretical model',
+    venue: 'Social Science & Medicine, 48(11), 1507–1515',
+    keyIdea:
+      'Propõe o conceito de "response shift": mudanças internas de padrões, valores e significado que alteram a autoavaliação de qualidade de vida ao longo do tempo.',
+    whyFoundational: 'Aponta um desafio central na medida longitudinal de qualidade de vida.',
+    relatedConceptIds: ['qualidade-vida'],
+  },
+  {
+    id: 'lordnovick1968',
+    authors: 'Lord, F. M., & Novick, M. R.',
+    year: 1968,
+    title: 'Statistical Theories of Mental Test Scores',
+    venue: 'Addison-Wesley',
+    keyIdea:
+      'Formaliza a Teoria Clássica dos Testes (escore observado = verdadeiro + erro) e apresenta as bases da teoria de resposta ao item.',
+    whyFoundational: 'Obra fundadora da teoria psicométrica moderna.',
+    relatedConceptIds: ['psicometria'],
+  },
+  {
+    id: 'embretson2000',
+    authors: 'Embretson, S. E., & Reise, S. P.',
+    year: 2000,
+    title: 'Item Response Theory for Psychologists',
+    venue: 'Lawrence Erlbaum',
+    keyIdea:
+      'Introduz a Teoria de Resposta ao Item (TRI): modela a probabilidade de resposta a cada item em função do traço latente e de parâmetros do item.',
+    whyFoundational: 'Referência didática da TRI para psicólogos.',
+    relatedConceptIds: ['psicometria'],
+  },
+  {
+    id: 'beaton2000',
+    authors: 'Beaton, D. E., Bombardier, C., Guillemin, F., & Ferraz, M. B.',
+    year: 2000,
+    title: 'Guidelines for the process of cross-cultural adaptation of self-report measures',
+    venue: 'Spine, 25(24), 3186–3191',
+    keyIdea:
+      'Estabelece etapas para adaptação transcultural de instrumentos (tradução, retrotradução, comitê, pré-teste), buscando equivalência semântica e cultural.',
+    whyFoundational: 'Diretriz de referência para adaptar instrumentos entre idiomas/culturas.',
+    relatedConceptIds: ['desenvolvimento-instrumentos'],
+  },
+  {
+    id: 'boateng2018',
+    authors: 'Boateng, G. O., Neilands, T. B., Frongillo, E. A., Melgar-Quiñonez, H. R., & Young, S. L.',
+    year: 2018,
+    title: 'Best practices for developing and validating scales for health, social, and behavioral research: a primer',
+    venue: 'Frontiers in Public Health, 6:149',
+    keyIdea:
+      'Guia prático e atual das etapas de construção e validação de escalas (geração de itens, validade de conteúdo, análise fatorial, confiabilidade).',
+    whyFoundational: 'Síntese contemporânea das melhores práticas de desenvolvimento de instrumentos.',
+    relatedConceptIds: ['desenvolvimento-instrumentos'],
+  },
 ]
