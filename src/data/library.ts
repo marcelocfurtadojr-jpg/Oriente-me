@@ -189,4 +189,38 @@ export const LIBRARY: Article[] = [
     whyFoundational: 'Padrão de referência para avaliar e desenvolver instrumentos de medida em saúde.',
     relatedConceptIds: ['desenvolvimento-instrumentos'],
   },
+  {
+    id: 'bickel2014',
+    authors: 'Bickel, W. K., Johnson, M. W., Koffarnus, M. N., MacKillop, J., & Murphy, J. G.',
+    year: 2014,
+    title: 'The behavioral economics of substance use disorders: reinforcer pathology and its repair',
+    venue: 'Annual Review of Clinical Psychology, 10, 641–677',
+    keyIdea:
+      'Reúne demanda e desconto do atraso no conceito de "patologia do reforço" (reinforcer pathology) e discute como repará-la — ponte direta entre economia comportamental e saúde.',
+    whyFoundational: 'Aplica a economia comportamental a problemas clínicos e de saúde de forma integradora.',
+    relatedConceptIds: ['economia-comportamental', 'doencas-cronicas'],
+  },
+  {
+    id: 'messick1995',
+    authors: 'Messick, S.',
+    year: 1995,
+    title:
+      "Validity of psychological assessment: validation of inferences from persons' responses and performances as scientific inquiry into score meaning",
+    venue: 'American Psychologist, 50(9), 741–749',
+    keyIdea:
+      'Propõe a validade como um conceito unificado (centrado na validade de construto), incluindo aspectos consequenciais da interpretação e uso dos escores.',
+    whyFoundational: 'Consolida a visão contemporânea e unificada de validade.',
+    relatedConceptIds: ['psicometria', 'desenvolvimento-instrumentos'],
+  },
+  {
+    id: 'nunnally1978',
+    authors: 'Nunnally, J. C.',
+    year: 1978,
+    title: 'Psychometric Theory (2nd ed.)',
+    venue: 'McGraw-Hill',
+    keyIdea:
+      'Manual clássico de teoria psicométrica: confiabilidade, validade, construção de itens e escalas.',
+    whyFoundational: 'Referência didática fundamental da psicometria clássica.',
+    relatedConceptIds: ['psicometria'],
+  },
 ]

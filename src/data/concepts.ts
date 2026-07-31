@@ -113,7 +113,7 @@ export const CONCEPTS: Concept[] = [
     title: 'Operações Motivadoras (EO e AO)',
     short: 'Eventos que alteram o valor de um reforçador e a evocação do comportamento relacionado.',
     area: 'Análise do Comportamento',
-    prereqs: ['controle-estimulos', 'reforcamento'],
+    prereqs: [],
     articleIds: ['michael1982', 'michael1993', 'laraway2003'],
     anchors: [
       'Dois efeitos: value-altering (altera o valor reforçador/punidor) e behavior-altering (evoca ou abole a resposta).',
@@ -126,7 +126,7 @@ export const CONCEPTS: Concept[] = [
     title: 'Lei da Igualação',
     short: 'A distribuição relativa de respostas iguala a distribuição relativa de reforços em escolhas concorrentes.',
     area: 'Análise do Comportamento',
-    prereqs: ['reforcamento', 'contingencias'],
+    prereqs: ['operacoes-motivadoras'],
     articleIds: ['herrnstein1961', 'herrnstein1970', 'baum1974'],
     anchors: [
       'Herrnstein (1961) formula a igualação a partir de esquemas concorrentes; Herrnstein (1970) generaliza na "lei do efeito".',
@@ -150,7 +150,7 @@ export const CONCEPTS: Concept[] = [
     title: 'Economia Comportamental',
     short: 'Aplica conceitos de demanda e elasticidade ao comportamento; base para autocontrole e saúde.',
     area: 'Análise do Comportamento',
-    prereqs: ['alocacao-comportamento', 'operacoes-motivadoras'],
+    prereqs: ['alocacao-comportamento'],
     articleIds: ['hursh1980', 'hurshsilberberg2008', 'rachlingreen1972'],
     anchors: [
       'Hursh (1980) importa demanda e elasticidade para a AC; Hursh & Silberberg (2008) propõem o modelo exponencial de demanda e o "valor essencial".',
@@ -163,7 +163,7 @@ export const CONCEPTS: Concept[] = [
     title: 'Psicologia da Saúde',
     short: 'Aplicação de princípios comportamentais à saúde: adesão, prevenção e manejo de doenças.',
     area: 'Psicologia da Saúde',
-    prereqs: ['reforcamento', 'controle-estimulos'],
+    prereqs: ['economia-comportamental'],
     articleIds: [],
     anchors: [
       'Campo interdisciplinar; na abordagem analítico-comportamental, comportamentos de saúde e doença são analisados por suas contingências.',

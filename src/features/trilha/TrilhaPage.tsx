@@ -3,29 +3,16 @@ import { Lock, CheckCircle2, Sparkles } from 'lucide-react'
 import { WORLDS } from '../../content/worlds'
 import { hasLesson } from '../../content/lessons'
 import { conceptById, isUnlocked, masteryOf } from '../../lib/knowledge/graph'
-import { useProfile, useProgress } from '../../lib/hooks'
+import { useProgress } from '../../lib/hooks'
 import { GameBar } from '../game/GameBar'
 import { Card, MasteryBadge } from '../../components/ui'
 
 export function TrilhaPage() {
-  const profile = useProfile()
   const progress = useProgress()
-
-  if (profile === undefined) return <p className="text-muted">Carregando…</p>
 
   return (
     <div className="flex flex-col gap-6">
       <GameBar />
-
-      {profile === null && (
-        <Link
-          to="/onboarding"
-          className="rounded-xl border border-dashed border-border bg-surface p-3 text-sm text-muted transition hover:border-accent"
-        >
-          👋 Quer personalizar (opcional)? <span className="text-accent">Preencher seu perfil</span> deixa os
-          modos Orientador e Banca com a sua cara.
-        </Link>
-      )}
 
       {WORLDS.map((world, wi) => (
         <section key={world.id}>

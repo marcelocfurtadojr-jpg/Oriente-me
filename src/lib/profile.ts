@@ -1,7 +1,8 @@
 import type { Profile } from '../types'
 
 export function profileSummary(p: Profile | null | undefined): string {
-  if (!p) return 'Aluno de pós-graduação (perfil ainda não preenchido).'
+  if (!p)
+    return 'Aluno de pós-graduação em Análise do Comportamento aplicada à Psicologia da Saúde, pesquisando Qualidade de Vida em Hipertensão Arterial Pulmonar (HAP).'
   return [
     p.formacao && `Formação: ${p.formacao}`,
     p.nivel && `Nível: ${p.nivel}`,

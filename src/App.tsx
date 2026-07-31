@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { TrilhaPage } from './features/trilha/TrilhaPage'
-import { Onboarding } from './features/onboarding/Onboarding'
 import { LessonPage } from './features/licao/LessonPage'
 import { BibliotecaPage } from './features/biblioteca/BibliotecaPage'
 import { ReviewPage } from './features/review/ReviewPage'
@@ -13,7 +12,6 @@ import { SettingsPage } from './features/settings/SettingsPage'
 export default function App() {
   return (
     <Routes>
-      <Route path="/onboarding" element={<Onboarding />} />
       <Route element={<Layout />}>
         <Route path="/" element={<TrilhaPage />} />
         <Route path="/licao/:id" element={<LessonPage />} />
