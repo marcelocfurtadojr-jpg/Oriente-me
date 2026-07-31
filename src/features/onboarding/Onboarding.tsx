@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BookOpen } from 'lucide-react'
-import { saveProfile } from '../../lib/db/repo'
+import { getProfile, saveProfile } from '../../lib/db/repo'
 import { Button, Card } from '../../components/ui'
 
 const FIELDS = [
@@ -24,12 +24,28 @@ export function Onboarding() {
   const [form, setForm] = useState<Record<string, string>>({ ...PREFILL })
   const [saving, setSaving] = useState(false)
 
+  useEffect(() => {
+    getProfile().then((p) => {
+      if (p) {
+        setForm({
+          formacao: p.formacao,
+          nivel: p.nivel,
+          objetivos: p.objetivos,
+          temas: p.temas,
+          autores: p.autores,
+          dificuldades: p.dificuldades,
+        })
+      }
+    })
+  }, [])
+
   async function submit() {
     setSaving(true)
     const now = new Date().toISOString()
+    const existing = await getProfile()
     await saveProfile({
       id: 'me',
-      createdAt: now,
+      createdAt: existing?.createdAt ?? now,
       updatedAt: now,
       completed: true,
       formacao: form.formacao ?? '',
@@ -46,11 +62,11 @@ export function Onboarding() {
     <div className="mx-auto max-w-2xl px-4 py-8">
       <div className="mb-4 flex items-center gap-2">
         <BookOpen className="h-6 w-6 text-accent" />
-        <h1 className="text-xl font-semibold">Vamos montar seu perfil</h1>
+        <h1 className="text-xl font-semibold">Seu perfil (opcional)</h1>
       </div>
       <p className="mb-5 text-sm text-muted">
-        Isso calibra seu plano de estudos. Você pode editar depois. Já preenchi alguns campos com o que você
-        mencionou — ajuste à vontade.
+        Isso só personaliza os modos <b>Orientador</b> e <b>Banca</b> — <b>não é obrigatório</b> para usar a
+        trilha. Você pode pular agora e preencher depois em Ajustes.
       </p>
       <Card className="flex flex-col gap-4">
         {FIELDS.map((f) => (
@@ -65,9 +81,14 @@ export function Onboarding() {
             />
           </label>
         ))}
-        <Button onClick={submit} disabled={saving}>
-          {saving ? 'Salvando…' : 'Criar meu plano'}
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button onClick={submit} disabled={saving}>
+            {saving ? 'Salvando…' : 'Salvar e começar'}
+          </Button>
+          <Button variant="ghost" onClick={() => nav('/')}>
+            Pular por enquanto
+          </Button>
+        </div>
       </Card>
     </div>
   )

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Check, X, Loader2, RefreshCw } from 'lucide-react'
 import { useApp } from '../../store/appStore'
 import { resetAll } from '../../lib/db/repo'
 import { Card, Button } from '../../components/ui'
 
 export function SettingsPage() {
+  const nav = useNavigate()
   const { ollamaBaseUrl, model, setBaseUrl, setModel, getProvider } = useApp()
   const [url, setUrl] = useState(ollamaBaseUrl)
   const [models, setModels] = useState<string[]>([])
@@ -31,6 +33,12 @@ export function SettingsPage() {
   return (
     <div className="flex max-w-2xl flex-col gap-4">
       <h1 className="text-xl font-semibold">Ajustes</h1>
+
+      <Card className="flex flex-col gap-2">
+        <h2 className="font-medium">Perfil</h2>
+        <p className="text-sm text-muted">Opcional. Personaliza os modos Orientador e Banca com o seu contexto.</p>
+        <Button variant="soft" onClick={() => nav('/onboarding')}>Editar perfil</Button>
+      </Card>
 
       <Card className="flex flex-col gap-3">
         <h2 className="font-medium">Motor de IA (Ollama)</h2>
