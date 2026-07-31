@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import {
-  BookMarked, Check, X, Sparkles, ArrowRight, Lightbulb, FlaskConical, Clock, Network,
+  BookMarked, Check, X, Sparkles, ArrowRight, Lightbulb, FlaskConical, Clock, Network, Stethoscope, Scale,
 } from 'lucide-react'
 import { getConcept, articleById, masteryOf } from '../../lib/knowledge/graph'
 import { getLesson } from '../../content/lessons'
@@ -16,9 +16,11 @@ import type { Lesson } from '../../content/types'
 
 const SECTIONS = [
   { key: 'intuicao', label: 'Intuição', icon: Lightbulb },
-  { key: 'tecnico', label: 'Técnico', icon: FlaskConical },
+  { key: 'tecnico', label: 'Explicação técnica', icon: FlaskConical },
   { key: 'historia', label: 'História', icon: Clock },
   { key: 'relacoes', label: 'Relações', icon: Network },
+  { key: 'aplicacoes', label: 'Aplicações e pesquisa', icon: Stethoscope },
+  { key: 'criticas', label: 'Críticas e limitações', icon: Scale },
 ] as const
 
 const MASTERY_LABEL = { unknown: 'Não iniciado', fragile: 'Frágil', partial: 'Parcial', mastered: 'Dominado' }
@@ -200,13 +202,13 @@ export function LessonPage() {
 
       {tab === 'estudo' && (
         <div className="flex flex-col gap-3">
-          {SECTIONS.map(({ key, label, icon: Icon }) => (
+          {SECTIONS.filter((s) => lesson[s.key]).map(({ key, label, icon: Icon }) => (
             <Card key={key}>
               <div className="mb-1 flex items-center gap-2">
                 <Icon className="h-4 w-4 text-accent" />
                 <h3 className="font-medium">{label}</h3>
               </div>
-              <Markdown>{lesson[key]}</Markdown>
+              <Markdown>{lesson[key] ?? ''}</Markdown>
             </Card>
           ))}
           <Button onClick={() => setTab('quiz')} className="self-start">

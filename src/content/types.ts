@@ -17,6 +17,9 @@ export interface Lesson {
   tecnico: string
   historia: string
   relacoes: string
+  /** Seções opcionais de aprofundamento (nível pós-graduação). */
+  aplicacoes?: string
+  criticas?: string
   /** referências fundadoras (ids da biblioteca), destacadas na fase. */
   articleIds: string[]
   quiz: QuizQuestion[]

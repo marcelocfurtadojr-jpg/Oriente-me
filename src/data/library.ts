@@ -223,4 +223,58 @@ export const LIBRARY: Article[] = [
     whyFoundational: 'Referência didática fundamental da psicometria clássica.',
     relatedConceptIds: ['psicometria'],
   },
+  {
+    id: 'skinner1957',
+    authors: 'Skinner, B. F.',
+    year: 1957,
+    title: 'Verbal Behavior',
+    venue: 'Appleton-Century-Crofts',
+    keyIdea:
+      'Análise funcional da linguagem: define operantes verbais como o mando (controlado por operação motivadora) e o tato (controlado por estímulo discriminativo).',
+    whyFoundational: 'Base do comportamento verbal; o mando é o caso clássico de controle por OM.',
+    relatedConceptIds: ['operacoes-motivadoras'],
+  },
+  {
+    id: 'iwata1994',
+    authors: 'Iwata, B. A., Dorsey, M. F., Slifer, K. J., Bauman, K. E., & Richman, G. S.',
+    year: '1982/1994',
+    title: 'Toward a functional analysis of self-injury',
+    venue: 'Journal of Applied Behavior Analysis, 27(2), 197–209 (reimpressão)',
+    keyIdea:
+      'Introduz a metodologia da análise funcional experimental, manipulando condições (inclusive motivacionais) para identificar a função do comportamento.',
+    whyFoundational: 'Fundou a análise funcional; as OMs são as condições manipuladas nos testes.',
+    relatedConceptIds: ['operacoes-motivadoras'],
+  },
+  {
+    id: 'mcgill1999',
+    authors: 'McGill, P.',
+    year: 1999,
+    title: 'Establishing operations: implications for the assessment, treatment, and prevention of problem behavior',
+    venue: 'Journal of Applied Behavior Analysis, 32(3), 393–418',
+    keyIdea:
+      'Revisa as operações estabelecedoras e suas implicações práticas para avaliar, tratar e prevenir o comportamento-problema.',
+    whyFoundational: 'Ponte das OMs para a avaliação e a intervenção clínica.',
+    relatedConceptIds: ['operacoes-motivadoras'],
+  },
+  {
+    id: 'ainslie1975',
+    authors: 'Ainslie, G.',
+    year: 1975,
+    title: 'Specious reward: a behavioral theory of impulsiveness and impulse control',
+    venue: 'Psychological Bulletin, 82(4), 463–496',
+    keyIdea:
+      'Propõe o desconto hiperbólico do valor com o atraso e a reversão de preferência — base comportamental da impulsividade e do autocontrole.',
+    whyFoundational: 'Fundamento do desconto do atraso e do estudo do autocontrole.',
+    relatedConceptIds: ['alocacao-comportamento', 'economia-comportamental'],
+  },
+  {
+    id: 'davisonmccarthy1988',
+    authors: 'Davison, M., & McCarthy, D.',
+    year: 1988,
+    title: 'The Matching Law: A Research Review',
+    venue: 'Lawrence Erlbaum',
+    keyIdea: 'Revisão abrangente da lei da igualação, suas extensões (viés, sensibilidade) e a base empírica.',
+    whyFoundational: 'Consolidação empírica e teórica da lei da igualação.',
+    relatedConceptIds: ['lei-igualacao', 'alocacao-comportamento'],
+  },
 ]
