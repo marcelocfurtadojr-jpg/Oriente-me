@@ -514,6 +514,432 @@ Dois subtipos:
       },
     ],
   },
+
+  'lei-igualacao': {
+    conceptId: 'lei-igualacao',
+    intuicao: `Imagine dois lagos para pescar, lado a lado. Num deles os peixes mordem o dobro das vezes. Você não fica 100% no melhor lago nem divide 50/50 — sem pensar, você acaba passando **mais ou menos o dobro** do tempo no lago que rende mais. Sua escolha acompanha, de forma proporcional, o retorno de cada opção.
+
+Essa é a intuição da lei da igualação: a escolha raramente é "tudo ou nada". Ela se **distribui na proporção** dos reforços que cada alternativa entrega.`,
+    tecnico: `A **lei da igualação** (Herrnstein, 1961) afirma que, em esquemas concorrentes, a proporção **relativa** de respostas iguala a proporção relativa de reforços obtidos:
+
+B1 / (B1 + B2) = r1 / (r1 + r2)
+
+A **lei da igualação generalizada** (Baum, 1974) acrescenta dois parâmetros:
+
+log(B1/B2) = a · log(r1/r2) + log b
+
+- **a (sensibilidade)**: quanto a escolha responde às diferenças de reforço; **a < 1** é a *sub-igualação* (undermatching), o desvio mais comum.
+- **b (viés)**: preferência sistemática por uma alternativa, independente do reforço.`,
+    historia: `**Herrnstein (1961)** derivou a igualação com pombos em esquemas concorrentes de intervalo variável; em **Herrnstein (1970)** generalizou-a como uma formulação quantitativa da lei do efeito. **Baum (1974)** propôs a forma generalizada (viés e sensibilidade), tornando-a aplicável a dados reais.`,
+    relacoes: `**Reforçamento → esquemas concorrentes → Lei da Igualação (Herrnstein) → forma generalizada (Baum) → Alocação do Comportamento → Economia Comportamental.**`,
+    articleIds: ['herrnstein1961', 'herrnstein1970', 'baum1974'],
+    quiz: [
+      {
+        id: 'li-q1',
+        prompt: 'Segundo a lei da igualação, em duas alternativas concorrentes a proporção de respostas tende a:',
+        options: [
+          'Ir 100% para a alternativa com mais reforço',
+          'Igualar a proporção de reforços obtidos em cada alternativa',
+          'Ser aleatória',
+          'Depender só do esforço físico',
+        ],
+        correct: 1,
+        explanation: 'A proporção de respostas iguala a proporção relativa de reforços (Herrnstein, 1961).',
+      },
+      {
+        id: 'li-q2',
+        prompt: 'Na lei da igualação generalizada (Baum, 1974), "sub-igualação" (undermatching) significa:',
+        options: [
+          'Sensibilidade menor que a igualação perfeita (a < 1): a escolha responde menos que o previsto às diferenças de reforço',
+          'Preferência total por uma alternativa',
+          'Reforço igual nas duas alternativas',
+          'Ausência de comportamento',
+        ],
+        correct: 0,
+        explanation:
+          'Undermatching (a < 1) é o desvio mais comum: menor sensibilidade às diferenças de reforço do que a igualação perfeita.',
+      },
+      {
+        id: 'li-q3',
+        prompt: 'Um pombo distribui 70% das bicadas na tecla A e 30% na B. Pela igualação, a tecla A forneceu aproximadamente:',
+        options: ['30% dos reforços', '70% dos reforços obtidos', 'Todos os reforços', 'Nenhum reforço'],
+        correct: 1,
+        explanation: 'A proporção de respostas (70/30) reflete a proporção de reforços obtidos — cerca de 70% na tecla A.',
+      },
+    ],
+  },
+
+  'alocacao-comportamento': {
+    conceptId: 'alocacao-comportamento',
+    intuicao: `Pense no seu tempo como um orçamento: você "gasta" comportamento entre as opções disponíveis — academia ou sofá, cozinhar ou pedir delivery. O comportamento tende a fluir para onde o reforço é mais rico e mais imediato.
+
+E aqui mora um problema clássico da saúde: o reforço **imediato e menor** (descansar agora) muitas vezes vence o **maior e atrasado** (saúde no futuro). Autocontrole é justamente arranjar as coisas para escolher o reforço maior e adiado.`,
+    tecnico: `**Alocação do comportamento** é a distribuição das respostas (ou do tempo) entre alternativas ao longo do tempo — a face "molar" da escolha, derivada da igualação.
+
+Conceitos relacionados:
+- **Autocontrole por compromisso** (Rachlin & Green, 1972): comprometer-se antecipadamente com a opção maior e atrasada.
+- **Reversão de preferência**: à medida que o reforço menor e imediato se aproxima, a preferência pode se inverter.
+- **Melhora local (melioration)**: tendência a migrar para a alternativa com maior taxa local de reforço, nem sempre ótima no longo prazo.`,
+    historia: `Desdobra a igualação (Herrnstein, 1970; Baum, 1974) para o estudo da escolha. **Rachlin & Green (1972)** conectaram alocação, escolha e autocontrole, mostrando o papel do compromisso diante de reforçadores atrasados.`,
+    relacoes: `**Lei da Igualação → Alocação do Comportamento → autocontrole/compromisso (Rachlin) → Economia Comportamental (desconto do atraso).**`,
+    articleIds: ['herrnstein1970', 'baum1974', 'rachlingreen1972'],
+    quiz: [
+      {
+        id: 'al-q1',
+        prompt: 'Alocação do comportamento refere-se a:',
+        options: [
+          'Distribuir o comportamento entre alternativas ao longo do tempo',
+          'Eliminar um comportamento',
+          'Um reflexo inato',
+          'A topografia da resposta',
+        ],
+        correct: 0,
+        explanation: 'Alocação é como o organismo reparte tempo/respostas entre as fontes de reforço disponíveis.',
+      },
+      {
+        id: 'al-q2',
+        prompt:
+          'Escolher um reforço maior e atrasado em vez de um menor e imediato, comprometendo-se antecipadamente, é o que Rachlin & Green (1972) estudaram como:',
+        options: ['Extinção', 'Autocontrole (compromisso)', 'Punição', 'Generalização'],
+        correct: 1,
+        explanation:
+          'Autocontrole por compromisso: arranjar antecipadamente a situação para escolher o reforço maior e atrasado.',
+      },
+      {
+        id: 'al-q3',
+        prompt:
+          'Um paciente pula a caminhada (alívio imediato) apesar do benefício maior e futuro para a saúde. Isso ilustra:',
+        options: [
+          'Preferência pelo reforço imediato menor sobre o atrasado maior',
+          'Ausência de contingências',
+          'Reforçamento negativo do exercício',
+          'Igualação perfeita',
+        ],
+        correct: 0,
+        explanation:
+          'É o padrão de escolha impulsiva: o reforço imediato (descanso) supera o maior e atrasado (saúde) — o cerne do autocontrole.',
+      },
+    ],
+  },
+
+  'economia-comportamental': {
+    conceptId: 'economia-comportamental',
+    intuicao: `E se tratássemos os reforçadores como **produtos com preço**? O "preço" é o esforço/custo para consegui-los, e a "demanda" é o quanto você consome. Quando o preço sobe, alguns reforçadores você corta rápido (demanda **elástica**, como um doce); outros você mantém quase a qualquer custo (demanda **inelástica**, como algo essencial).
+
+Essa lente explica muita coisa em saúde: adesão, uso de substâncias, comportamento de risco — e por que o benefício distante perde para o custo imediato.`,
+    tecnico: `A **economia comportamental** aplica conceitos econômicos ao comportamento:
+- **Curva de demanda**: consumo em função do preço (respostas por reforço/custo).
+- **Elasticidade**: sensibilidade do consumo ao preço; **Pmax/ponto de quebra (breakpoint)**.
+- **Valor essencial** (Hursh & Silberberg, 2008): quanto mais inelástica a demanda, maior o valor essencial do reforçador.
+- **Desconto do atraso (delay discounting)**: o valor de um reforço cai à medida que ele é adiado — base do autocontrole e de escolhas de saúde.`,
+    historia: `**Hursh (1980)** introduziu formalmente conceitos econômicos (demanda, elasticidade) na análise do comportamento; **Hursh & Silberberg (2008)** propuseram o modelo exponencial de demanda e o valor essencial. As raízes em autocontrole/desconto vêm de **Rachlin & Green (1972)**.`,
+    relacoes: `**Alocação + Operações Motivadoras → Economia Comportamental (demanda, elasticidade, desconto) → aplicações em Psicologia da Saúde (adesão, risco, doenças crônicas).**`,
+    articleIds: ['hursh1980', 'hurshsilberberg2008', 'rachlingreen1972'],
+    quiz: [
+      {
+        id: 'ec-q1',
+        prompt: 'Na economia comportamental, "elasticidade da demanda" descreve:',
+        options: [
+          'O quanto o consumo de um reforço cai quando seu "preço" (custo/esforço) aumenta',
+          'A velocidade da resposta',
+          'O número de reforçadores',
+          'A duração do estímulo',
+        ],
+        correct: 0,
+        explanation: 'Demanda elástica cai muito com o aumento do preço; inelástica se mantém (Hursh, 1980).',
+      },
+      {
+        id: 'ec-q2',
+        prompt: 'O "valor essencial" (Hursh & Silberberg, 2008) de um reforçador é maior quando a demanda é:',
+        options: [
+          'Mais inelástica (persiste mesmo com preço alto)',
+          'Mais elástica',
+          'Nula',
+          'Aleatória',
+        ],
+        correct: 0,
+        explanation:
+          'Quanto mais inelástica a demanda (persiste apesar do custo), maior o valor essencial do reforçador.',
+      },
+      {
+        id: 'ec-q3',
+        prompt: 'Fumantes que mantêm o consumo mesmo com forte aumento de preço demonstram uma demanda:',
+        options: ['Elástica', 'Inelástica', 'Sem valor essencial', 'Igualada'],
+        correct: 1,
+        explanation:
+          'Consumo que resiste ao aumento de preço = demanda inelástica, alto valor essencial — relevante à "patologia do reforço".',
+      },
+    ],
+  },
+
+  'psicologia-saude': {
+    conceptId: 'psicologia-saude',
+    intuicao: `Saúde não é só biologia. Boa parte do que determina adoecer ou se manter bem é **o que a pessoa faz todo dia**: como come, se movimenta, toma (ou não) a medicação, como lida com o estresse. E comportamento é moldado por contingências.
+
+Uma psicologia da saúde de base analítico-comportamental pergunta: *o que mantém* os comportamentos de saúde e de risco — e como rearranjar o ambiente para favorecer os saudáveis.`,
+    tecnico: `A **Psicologia da Saúde** aplica a psicologia à promoção da saúde, à prevenção e ao manejo de doenças. Adota o **modelo biopsicossocial** (Engel, 1977): o adoecer resulta da interação de fatores biológicos, psicológicos e sociais.
+
+Na abordagem analítico-comportamental, comportamentos de saúde (adesão, autocuidado, comportamento de risco) são **operantes**, analisados funcionalmente; intervenções rearranjam **antecedentes e consequências**.`,
+    historia: `Consolidou-se como campo nas décadas de 1970-80. O artigo de **Engel (1977)**, propondo o modelo biopsicossocial, é um marco por desafiar o modelo estritamente biomédico.`,
+    relacoes: `**Reforçamento / Controle de Estímulos → Psicologia da Saúde → Doenças Crônicas → Qualidade de Vida.**`,
+    articleIds: ['engel1977'],
+    quiz: [
+      {
+        id: 'ps-q1',
+        prompt: 'O modelo biopsicossocial (Engel, 1977) propõe que a saúde/doença resulta de:',
+        options: [
+          'Apenas fatores biológicos',
+          'Fatores biológicos, psicológicos e sociais em interação',
+          'Apenas fatores psicológicos',
+          'Acaso',
+        ],
+        correct: 1,
+        explanation: 'Engel (1977) ampliou o modelo biomédico para incluir dimensões psicológicas e sociais.',
+      },
+      {
+        id: 'ps-q2',
+        prompt: 'Na abordagem analítico-comportamental da saúde, a adesão ao tratamento é entendida como:',
+        options: [
+          'Traço fixo de personalidade',
+          'Operante mantido por contingências (antecedentes e consequências)',
+          'Reflexo inato',
+          'Escolha puramente racional',
+        ],
+        correct: 1,
+        explanation:
+          'Comportamentos de saúde são operantes: analisá-los funcionalmente permite rearranjar contingências para promovê-los.',
+      },
+      {
+        id: 'ps-q3',
+        prompt: 'Para aumentar a adesão a uma medicação, uma intervenção comportamental atuaria principalmente em:',
+        options: [
+          'Antecedentes e consequências do comportamento de tomar o remédio',
+          'Apenas na dose do remédio',
+          'Na genética do paciente',
+          'Em nada, pois adesão é força de vontade',
+        ],
+        correct: 0,
+        explanation: 'Ajustar lembretes (antecedentes) e consequências (feedback, reforço) é a lógica comportamental da adesão.',
+      },
+    ],
+  },
+
+  'doencas-cronicas': {
+    conceptId: 'doencas-cronicas',
+    intuicao: `Uma doença crônica — como a **Hipertensão Arterial Pulmonar (HAP)** — não se resolve com um único tratamento: ela é manejada **todos os dias, por anos**. Isso a torna uma maratona comportamental: adesão, automonitoramento, mudanças de estilo de vida.
+
+São as pequenas contingências diárias, repetidas no tempo, que decidem o desfecho — e é aí que a análise do comportamento e a economia comportamental entram.`,
+    tecnico: `**Doenças crônicas** são condições de longo curso que exigem manejo contínuo. Alvos comportamentais típicos: **adesão** ao tratamento, **automonitoramento**, mudança de **estilo de vida**.
+
+A **HAP** é crônica, progressiva e grave, com forte impacto funcional e sobre a qualidade de vida. O **desconto do atraso** ajuda a explicar por que custos imediatos (efeitos colaterais, esforço) frequentemente superam benefícios de saúde maiores, porém distantes.`,
+    historia: `A transição epidemiológica do século XX — de doenças agudas/infecciosas para condições crônicas — colocou o comportamento no centro dos desfechos de saúde, motivando a Psicologia da Saúde e a análise comportamental aplicada à adesão.`,
+    relacoes: `**Psicologia da Saúde → Doenças Crônicas (ex.: HAP) → Qualidade de Vida → medida (instrumentos de QV).**`,
+    articleIds: [],
+    quiz: [
+      {
+        id: 'dc-q1',
+        prompt: 'O que torna as doenças crônicas um desafio especialmente comportamental?',
+        options: [
+          'São curadas rapidamente',
+          'Exigem manejo diário e sustentado por longos períodos (adesão, automonitoramento, estilo de vida)',
+          'Não têm tratamento',
+          'Independem do comportamento do paciente',
+        ],
+        correct: 1,
+        explanation: 'Por serem de longo curso, dependem de comportamentos mantidos ao longo do tempo — não de um ato único.',
+      },
+      {
+        id: 'dc-q2',
+        prompt: 'A Hipertensão Arterial Pulmonar (HAP) caracteriza-se por ser:',
+        options: [
+          'Aguda e autolimitada',
+          'Crônica, progressiva e com forte impacto funcional e sobre a qualidade de vida',
+          'Sem necessidade de tratamento contínuo',
+          'Restrita a idosos',
+        ],
+        correct: 1,
+        explanation: 'A HAP é crônica e grave, com grande carga sintomática/funcional — daí a centralidade da QV e da adesão.',
+      },
+      {
+        id: 'dc-q3',
+        prompt: 'Por que benefícios futuros à saúde muitas vezes perdem para custos imediatos (ex.: parar de fumar)?',
+        options: [
+          'Por desconto do atraso: o valor do reforço cai à medida que ele é adiado',
+          'Porque não há contingências',
+          'Porque o futuro não importa biologicamente',
+          'Por reforçamento negativo do futuro',
+        ],
+        correct: 0,
+        explanation: 'O desconto do atraso explica a preferência por ganhos imediatos frente a benefícios maiores e distantes.',
+      },
+    ],
+  },
+
+  'qualidade-vida': {
+    conceptId: 'qualidade-vida',
+    intuicao: `Dois pacientes com os **mesmos exames** podem viver de formas muito diferentes: um ativo e esperançoso, outro limitado e sofrendo. A qualidade de vida captura essa **experiência vivida** — não apenas os marcadores da doença.
+
+Por isso, em doenças crônicas como a HAP, medir qualidade de vida é tão importante quanto medir a fisiologia: é ela que traduz o que o tratamento significa para a vida da pessoa.`,
+    tecnico: `**Qualidade de vida (QV)** é um construto **multidimensional** (físico, psicológico, social, ambiental). A OMS/**WHOQOL (1995)** a define como a percepção do indivíduo sobre sua posição na vida, no contexto de sua cultura e valores.
+
+Distinções importantes:
+- **QV geral** × **qualidade de vida relacionada à saúde (HRQoL)**.
+- Instrumentos **genéricos** (comparam populações) × **específicos por doença** (mais sensíveis a mudanças da condição-alvo, ex.: HAP).`,
+    historia: `O **WHOQOL Group (1995)** operacionalizou a definição da OMS e desenvolveu medidas transculturais de qualidade de vida, consolidando o construto na pesquisa em saúde.`,
+    relacoes: `**Doenças Crônicas → Qualidade de Vida (geral vs HRQoL) → Psicometria / Desenvolvimento de Instrumentos (como medir).**`,
+    articleIds: ['whoqol1995'],
+    quiz: [
+      {
+        id: 'qv-q1',
+        prompt: 'Qualidade de vida, na definição da OMS/WHOQOL, é:',
+        options: [
+          'O resultado de exames laboratoriais',
+          'A percepção do indivíduo sobre sua posição na vida, no contexto de sua cultura e valores',
+          'A ausência de doença',
+          'A renda do paciente',
+        ],
+        correct: 1,
+        explanation: 'A definição da OMS é centrada na percepção do indivíduo, multidimensional e sensível à cultura.',
+      },
+      {
+        id: 'qv-q2',
+        prompt: 'A qualidade de vida relacionada à saúde (HRQoL) diferencia-se da QV geral porque:',
+        options: [
+          'Ignora a saúde',
+          'Foca especificamente o impacto da saúde/doença e do tratamento na vida',
+          'É apenas física',
+          'Não pode ser medida',
+        ],
+        correct: 1,
+        explanation: 'A HRQoL recorta o construto para o que se relaciona à saúde — útil em doenças crônicas como a HAP.',
+      },
+      {
+        id: 'qv-q3',
+        prompt: 'Instrumentos específicos por doença (vs genéricos) são preferíveis quando se quer:',
+        options: [
+          'Comparar populações muito diferentes',
+          'Detectar mudanças finas ligadas àquela condição específica (ex.: HAP)',
+          'Medir renda',
+          'Evitar qualquer validação',
+        ],
+        correct: 1,
+        explanation: 'Instrumentos específicos são mais sensíveis a aspectos e mudanças próprios da doença-alvo.',
+      },
+    ],
+  },
+
+  psicometria: {
+    conceptId: 'psicometria',
+    intuicao: `Se você vai construir uma régua, precisa garantir que ela meça comprimento de forma **consistente** e que realmente meça **comprimento** (e não peso). A psicometria é esse controle de qualidade — mas para coisas invisíveis, como qualidade de vida, ansiedade ou dor.
+
+Duas perguntas guiam tudo: a medida é **consistente** (confiabilidade)? E mede **o que diz medir** (validade)?`,
+    tecnico: `A **psicometria** reúne teoria e métodos para medir construtos psicológicos. Dois grandes referenciais: **Teoria Clássica dos Testes (TCT)** e **Teoria de Resposta ao Item (TRI)**.
+
+- **Confiabilidade**: consistência da medida — consistência interna (**alfa de Cronbach**, 1951) e estabilidade (teste-reteste).
+- **Validade**: evidências de que a medida representa o construto — de conteúdo, de estrutura interna e de relação com outras variáveis. A **validade de construto** (Cronbach & Meehl, 1955) é central.
+- **Análise fatorial** (exploratória/confirmatória) examina a estrutura interna.`,
+    historia: `**Cronbach (1951)** formalizou o coeficiente alfa (confiabilidade); **Cronbach & Meehl (1955)** introduziram a validade de construto — dois marcos que estruturam a psicometria moderna.`,
+    relacoes: `**Qualidade de Vida (o que medir) → Psicometria (como medir bem: confiabilidade e validade) → Desenvolvimento de Instrumentos.**`,
+    articleIds: ['cronbach1951', 'cronbachmeehl1955'],
+    quiz: [
+      {
+        id: 'pm-q1',
+        prompt: 'Confiabilidade e validade referem-se, respectivamente, a:',
+        options: [
+          'Consistência da medida e se ela mede o que pretende',
+          'Custo e rapidez',
+          'Tamanho da amostra e do teste',
+          'Idade e sexo dos respondentes',
+        ],
+        correct: 0,
+        explanation:
+          'Confiabilidade = consistência/estabilidade; validade = a medida realmente representa o construto pretendido.',
+      },
+      {
+        id: 'pm-q2',
+        prompt: 'O alfa de Cronbach (1951) é um índice de:',
+        options: [
+          'Validade de conteúdo',
+          'Consistência interna (confiabilidade)',
+          'Tamanho do efeito',
+          'Significância estatística',
+        ],
+        correct: 1,
+        explanation: 'O alfa estima a consistência interna dos itens — uma forma de confiabilidade.',
+      },
+      {
+        id: 'pm-q3',
+        prompt: 'A validade de construto (Cronbach & Meehl, 1955) diz respeito a:',
+        options: [
+          'Se o instrumento realmente mede o construto teórico pretendido',
+          'Ao preço do teste',
+          'Ao número de itens',
+          'À ordem das perguntas',
+        ],
+        correct: 0,
+        explanation:
+          'Validade de construto avalia se as inferências sobre o construto teórico são sustentadas pelas evidências.',
+      },
+    ],
+  },
+
+  'desenvolvimento-instrumentos': {
+    conceptId: 'desenvolvimento-instrumentos',
+    intuicao: `Criar uma boa escala de qualidade de vida para HAP é como **projetar um instrumento de precisão**: você define exatamente o que quer medir, redige os itens, testa com especialistas e pacientes, e prova estatisticamente que os itens se sustentam e significam o que deveriam.
+
+Não se trata de "inventar perguntas": cada etapa gera evidências de que a medida é confiável e válida.`,
+    tecnico: `O **desenvolvimento de instrumentos** costuma seguir etapas:
+1. **Definir o construto** e seu domínio.
+2. **Gerar itens**.
+3. **Validade de conteúdo** (juízes/especialistas).
+4. **Estudo piloto** e **análise de itens**.
+5. **Validação estrutural** (análise fatorial) e de **confiabilidade**.
+6. **Adaptação transcultural**, quando aplicável.
+
+O **COSMIN** (Mokkink et al., 2010) oferece consenso sobre as propriedades de medida a avaliar e como relatá-las.`,
+    historia: `Reúne e padroniza décadas de prática psicométrica. A iniciativa **COSMIN** (Mokkink et al., 2010) estabeleceu consenso internacional sobre taxonomia e critérios para propriedades de medida de instrumentos em saúde.`,
+    relacoes: `**Psicometria → Desenvolvimento de Instrumentos (ex.: escala de QV para HAP) → pesquisa aplicada (sua dissertação).**`,
+    articleIds: ['mokkink2010', 'cronbachmeehl1955'],
+    quiz: [
+      {
+        id: 'di-q1',
+        prompt: 'Qual é uma sequência típica no desenvolvimento de um instrumento?',
+        options: [
+          'Definir construto → gerar itens → validade de conteúdo → piloto → análise/validação',
+          'Publicar → coletar → definir construto',
+          'Aplicar sem validar',
+          'Apenas calcular o alfa',
+        ],
+        correct: 0,
+        explanation:
+          'Parte-se da definição do construto e da geração de itens, seguida de validação de conteúdo, piloto e análises psicométricas.',
+      },
+      {
+        id: 'di-q2',
+        prompt: 'A validade de conteúdo costuma ser avaliada por:',
+        options: [
+          'Juízes/especialistas que julgam a representatividade dos itens',
+          'Um único respondente',
+          'O preço do estudo',
+          'A cor do questionário',
+        ],
+        correct: 0,
+        explanation: 'Especialistas avaliam se os itens cobrem adequadamente o construto (validade de conteúdo).',
+      },
+      {
+        id: 'di-q3',
+        prompt: 'O COSMIN (Mokkink et al., 2010) oferece:',
+        options: [
+          'Um software de estatística',
+          'Padrões/consenso sobre propriedades de medida de instrumentos em saúde',
+          'Uma escala de QV pronta',
+          'Um modelo de negócio',
+        ],
+        correct: 1,
+        explanation: 'O COSMIN padroniza taxonomia e critérios para avaliar propriedades de medida de instrumentos de saúde.',
+      },
+    ],
+  },
 }
 
 export const getLesson = (conceptId: string): Lesson | undefined => LESSONS[conceptId]

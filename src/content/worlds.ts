@@ -23,21 +23,21 @@ export const WORLDS: World[] = [
     title: 'Escolha e Economia Comportamental',
     subtitle: 'Igualação, alocação do comportamento e demanda',
     conceptIds: ['lei-igualacao', 'alocacao-comportamento', 'economia-comportamental'],
-    status: 'soon',
+    status: 'ready',
   },
   {
     id: 'w3',
     title: 'Psicologia da Saúde',
     subtitle: 'Comportamento, doença crônica e qualidade de vida',
     conceptIds: ['psicologia-saude', 'doencas-cronicas', 'qualidade-vida'],
-    status: 'soon',
+    status: 'ready',
   },
   {
     id: 'w4',
     title: 'Medida e Instrumentos',
     subtitle: 'Psicometria e desenvolvimento de escalas',
     conceptIds: ['psicometria', 'desenvolvimento-instrumentos'],
-    status: 'soon',
+    status: 'ready',
   },
 ]
 

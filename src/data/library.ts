@@ -132,4 +132,61 @@ export const LIBRARY: Article[] = [
       'Base quantitativa moderna da economia comportamental (curvas de demanda e valor essencial).',
     relatedConceptIds: ['economia-comportamental'],
   },
+  {
+    id: 'engel1977',
+    authors: 'Engel, G. L.',
+    year: 1977,
+    title: 'The need for a new medical model: a challenge for biomedicine',
+    venue: 'Science, 196(4286), 129–136',
+    keyIdea:
+      'Propõe o modelo biopsicossocial: saúde e doença resultam da interação de fatores biológicos, psicológicos e sociais.',
+    whyFoundational: 'Marco que amplia o modelo biomédico e fundamenta a Psicologia da Saúde.',
+    relatedConceptIds: ['psicologia-saude'],
+  },
+  {
+    id: 'whoqol1995',
+    authors: 'The WHOQOL Group',
+    year: 1995,
+    title:
+      'The World Health Organization Quality of Life assessment (WHOQOL): position paper from the World Health Organization',
+    venue: 'Social Science & Medicine, 41(10), 1403–1409',
+    keyIdea:
+      'Define qualidade de vida como a percepção do indivíduo sobre sua posição na vida, no contexto de sua cultura e valores, e propõe medida multidimensional e transcultural.',
+    whyFoundational: 'Referência da definição e medida de qualidade de vida em saúde.',
+    relatedConceptIds: ['qualidade-vida'],
+  },
+  {
+    id: 'cronbach1951',
+    authors: 'Cronbach, L. J.',
+    year: 1951,
+    title: 'Coefficient alpha and the internal structure of tests',
+    venue: 'Psychometrika, 16(3), 297–334',
+    keyIdea:
+      'Formaliza o coeficiente alfa como índice de consistência interna (confiabilidade) de um teste.',
+    whyFoundational: 'Base clássica da confiabilidade em psicometria.',
+    relatedConceptIds: ['psicometria'],
+  },
+  {
+    id: 'cronbachmeehl1955',
+    authors: 'Cronbach, L. J., & Meehl, P. E.',
+    year: 1955,
+    title: 'Construct validity in psychological tests',
+    venue: 'Psychological Bulletin, 52(4), 281–302',
+    keyIdea:
+      'Introduz a validade de construto: em que medida um teste realmente mede o construto teórico pretendido.',
+    whyFoundational: 'Fundamento do conceito moderno de validade.',
+    relatedConceptIds: ['psicometria', 'desenvolvimento-instrumentos'],
+  },
+  {
+    id: 'mokkink2010',
+    authors: 'Mokkink, L. B., et al.',
+    year: 2010,
+    title:
+      'The COSMIN study reached international consensus on taxonomy, terminology, and definitions of measurement properties for health-related patient-reported outcomes',
+    venue: 'Journal of Clinical Epidemiology, 63(7), 737–745',
+    keyIdea:
+      'Estabelece consenso internacional (COSMIN) sobre taxonomia e definições das propriedades de medida de instrumentos em saúde.',
+    whyFoundational: 'Padrão de referência para avaliar e desenvolver instrumentos de medida em saúde.',
+    relatedConceptIds: ['desenvolvimento-instrumentos'],
+  },
 ]
